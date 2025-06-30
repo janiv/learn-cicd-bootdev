@@ -28,9 +28,8 @@ func TestGetAPIKey(t *testing.T) {
 	for i, c := range cases {
 		t.Run(fmt.Sprintf("Test case %v", i), func(t *testing.T) {
 			output, outErr := GetAPIKey(c.input)
-			fmt.Printf("output:%s outErr: %v c.key:%v c.err:%v\n", output, outErr, c.key, c.err)
 			if output != c.key || !errors.Is(c.err, outErr) {
-				t.Errorf("test case %v failed, got %v:%v instead of %v:%v", i, output, outErr, c.key, c.err)
+				t.Fatalf("test case %v failed, got %v:%v instead of %v:%v", i, output, outErr, c.key, c.err)
 			}
 		})
 	}
