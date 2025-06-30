@@ -23,7 +23,7 @@ func TestGetAPIKey(t *testing.T) {
 		err   error
 	}{
 		{input: headerWithMissingKey, key: "", err: ErrNoAuthHeaderIncluded},
-		{input: headerWithKey, key: "WRONGKEY", err: nil},
+		{input: headerWithKey, key: "007secretkey", err: nil},
 	}
 
 	for i, c := range cases {
