@@ -23,7 +23,7 @@ jobs:
 
   style:
     name: Style
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
